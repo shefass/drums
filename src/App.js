@@ -22,8 +22,9 @@ const data = [
   { id: "c", keyCode: 67, name: "Blip", sound: blip }
 ];
 
+var time;
 class App extends Component {
-  constructor(props) {
+    constructor(props) {
     super(props);
     this.state = {
       id: ""
@@ -36,12 +37,6 @@ class App extends Component {
       document.getElementById(a.id).addEventListener("click", this.click)
     );
   }
-  click = event => {
-    this.setState({
-      id: event.srcElement.id
-    });
-    setTimeout(this.timeOut, 1000);
-  };
   componentWillUnmount() {
     document.removeEventListener("keydown", this.handleKeyPress); // remove this same event
     //listener.It's good practice to use this lifecycle method to do any clean up on
@@ -51,24 +46,42 @@ class App extends Component {
       document.getElementById(a.id).removeEventListener("click", this.click)
     );
   }
-  //setTimeout(this.timeOut, 1000); we need to reset state
-  timeOut = () => {
+  componentDidUpdate(){
+       
+  }
+  
+  click = event => {
+   time = setTimeout(this.timeOut, 1000); 
+    
     this.setState({
-      id: ""
+      id: event.srcElement.id
     });
+    
   };
 
+  //setTimeout(this.timeOut, 1000); we need to reset state
+  timeOut = () => {
+      this.setState({
+      id: ""
+    });
+    clearTimeout(time);
+  };
+  
   handleKeyPress(event) {
-    setTimeout(this.timeOut, 1000);
+    
     let idObject = data.filter(a => event.keyCode === a.keyCode);
-
-    if (idObject.length > 0) {
+    time = setTimeout(this.timeOut, 1000);
+    
+      if (idObject.length > 0) {
       this.setState({
         id: idObject[0].id
       });
     }
+    
   }
+  
   render() {
+    
     return (
       <div className="Wrapper">
         <div id="drum-machine">
@@ -144,9 +157,11 @@ class Button extends Component {
           id={this.props.letter}
           onPointerEnter={this.onEnter}
           onPointerLeave={this.onLeave}
+          
           style={styles}
         >
-          {this.props.letter}
+          <span unselectable="on">{this.props.letter}</span>
+          
         </div>
       </div>
     );
