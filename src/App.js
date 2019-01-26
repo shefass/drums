@@ -160,7 +160,7 @@ class Button extends Component {
           
           style={styles}
         >
-          <span unselectable="on">{this.props.letter}</span>
+          {this.props.letter}
           
         </div>
       </div>
