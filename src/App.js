@@ -34,7 +34,7 @@ class App extends Component {
   componentDidMount() {
     document.addEventListener("keydown", this.handleKeyPress);
     data.map(a =>
-      document.getElementById(a.id).addEventListener("click", this.click)
+      document.getElementById(a.id).addEventListener("mousedown", this.click)
     );
   }
   componentWillUnmount() {
