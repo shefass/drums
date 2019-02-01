@@ -4,12 +4,12 @@ self.__precacheManifest = [
     "url": "/drums/static/media/pianoLid.97dc50c7.wav"
   },
   {
-    "revision": "3d4694352eed3eca6726",
+    "revision": "327d89ce151c365243e5",
     "url": "/drums/static/css/main.7952dd38.chunk.css"
   },
   {
-    "revision": "b7992e708002e6098eb0",
-    "url": "/drums/static/js/1.b7992e70.chunk.js"
+    "revision": "94efcf096a8016b1a407",
+    "url": "/drums/static/js/1.94efcf09.chunk.js"
   },
   {
     "revision": "82adbf0c0b4733a69e58",
@@ -28,8 +28,8 @@ self.__precacheManifest = [
     "url": "/drums/static/media/pianoFminor.d61e54da.wav"
   },
   {
-    "revision": "3d4694352eed3eca6726",
-    "url": "/drums/static/js/main.3d469435.chunk.js"
+    "revision": "327d89ce151c365243e5",
+    "url": "/drums/static/js/main.327d89ce.chunk.js"
   },
   {
     "revision": "dabc3535fcfde72bfbe44f9efe699d5b",
@@ -52,7 +52,7 @@ self.__precacheManifest = [
     "url": "/drums/static/media/blip.beb4ba7a.wav"
   },
   {
-    "revision": "03e9456272ae675824d1a7edc6ee5a70",
+    "revision": "ad138e6a1c94bb36fc8f95c8053d1963",
     "url": "/drums/index.html"
   }
 ];

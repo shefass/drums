@@ -1,9 +1,9 @@
 {
   "main.css": "/drums/static/css/main.7952dd38.chunk.css",
-  "main.js": "/drums/static/js/main.3cf3fde4.chunk.js",
-  "main.js.map": "/drums/static/js/main.3cf3fde4.chunk.js.map",
-  "static/js/1.b7992e70.chunk.js": "/drums/static/js/1.b7992e70.chunk.js",
-  "static/js/1.b7992e70.chunk.js.map": "/drums/static/js/1.b7992e70.chunk.js.map",
+  "main.js": "/drums/static/js/main.327d89ce.chunk.js",
+  "main.js.map": "/drums/static/js/main.327d89ce.chunk.js.map",
+  "static/js/1.94efcf09.chunk.js": "/drums/static/js/1.94efcf09.chunk.js",
+  "static/js/1.94efcf09.chunk.js.map": "/drums/static/js/1.94efcf09.chunk.js.map",
   "runtime~main.js": "/drums/static/js/runtime~main.82adbf0c.js",
   "runtime~main.js.map": "/drums/static/js/runtime~main.82adbf0c.js.map",
   "static/media/metalscrape.wav": "/drums/static/media/metalscrape.d8026bac.wav",
@@ -17,6 +17,6 @@
   "static/media/pianoCsh.wav": "/drums/static/media/pianoCsh.93ab2582.wav",
   "static/css/main.7952dd38.chunk.css.map": "/drums/static/css/main.7952dd38.chunk.css.map",
   "index.html": "/drums/index.html",
-  "precache-manifest.513bf47166796139a75d99ac93c813fe.js": "/drums/precache-manifest.513bf47166796139a75d99ac93c813fe.js",
+  "precache-manifest.101ca164e540d0f300ceff609455bbc7.js": "/drums/precache-manifest.101ca164e540d0f300ceff609455bbc7.js",
   "service-worker.js": "/drums/service-worker.js"
 }
