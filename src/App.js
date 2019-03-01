@@ -1,60 +1,60 @@
 import React, { Component } from "react";
 import "./App.css";
 import data from "./components/data/data";
-import Display from "./components/Display.jsx";
+import {Display} from "./components/Display.js";
 import Button from "./components/Button.jsx";
 
 var time;
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+    state = {
       id: ""
     };
-    this.handleKeyPress = this.handleKeyPress.bind(this);
-  }
+  
   componentDidMount() {
     document.addEventListener("keydown", this.handleKeyPress);
-    data.map(a =>
+    document.addEventListener("keyup", this.handleKeyUp);
+    this.unsubscribeMouseDown = data.map(a =>
       document.getElementById(a.id).addEventListener("mousedown", this.click)
+    );
+    this.unsubscribeMouseUp = data.map(a =>
+      document.getElementById(a.id).addEventListener("mouseup", this.clickEnd)
     );
   }
   componentWillUnmount() {
-    document.removeEventListener("keydown", this.handleKeyPress); // remove this same event
-    //listener.It's good practice to use this lifecycle method to do any clean up on
-    //React components before they are unmounted and destroyed. Removing event listeners is
-    //an example of one such clean up action.
-    data.map(a =>
-      document.getElementById(a.id).removeEventListener("click", this.click)
-    );
+    document.removeEventListener("keydown", this.handleKeyPress);
+    document.removeEventListener("keyup", this.handleKeyUp);
+    this.unsubscribeMouseDown();
+    this.unsubscribeMouseUp();
   }
 
   click = event => {
-    time = setTimeout(this.timeOut, 1000);
-
+    clearTimeout(time);
     this.setState({
       id: event.srcElement.id
     });
   };
 
-  //setTimeout(this.timeOut, 1000); we need to reset state
-  timeOut = () => {
-    this.setState({
+  clickEnd = () => {
+   time = setTimeout(()=>this.setState({
       id: ""
-    });
-    clearTimeout(time);
-  };
+    }), 1000);
+    
+  }
 
-  handleKeyPress(event) {
+  handleKeyPress = (event) => {
     let idObject = data.filter(a => event.keyCode === a.keyCode);
-    time = setTimeout(this.timeOut, 1000);
-
     if (idObject.length > 0) {
       this.setState({
         id: idObject[0].id
       });
     }
   }
+
+  handleKeyUp = () => {
+    this.setState({
+      id: ""
+    });
+  };
 
   render() {
     return (

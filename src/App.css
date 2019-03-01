@@ -12,7 +12,7 @@
   background-color: blueviolet;
   border-radius: 25px;
   height: 60%;
-  width: 60%;
+  min-width: 35em;
   display: flex;
 }
 
@@ -44,7 +44,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 7vh;
+  font-size: 3.5em;
   box-shadow: 2px 2px;
 }
 #display {
@@ -55,35 +55,34 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 4vh;
+  font-size: 2em;
   text-align: center;
   margin: 4% 4% 4% 0%;
 }
 #text {
   height: 70%;
-  font-size: 3.5vh;
+  font-size: 1.3em;
 }
 @media screen and (max-width: 750px) {
   #drum-machine {
     height: 75%;
-    width: 75%;
-  }
-  #display {
-    font-size: 5vh;
   }
 }
 
 @media screen and (max-width: 450px) {
   #drum-machine {
     height: 70%;
-    width: 100%;
+    min-width: 300px;
+  }
+  #display {
+    font-size: 1.5em;
   }
 }
 @media screen and (max-height: 400px) {
   #display {
-    font-size: 9vh;
+    font-size: 1.5em;
   }
   #text {
-    font-size: 5vh;
+    font-size: 1em;
   }
 }
