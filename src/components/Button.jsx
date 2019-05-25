@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { PlayMusic } from "./PlayMusic";
+import styled from "styled-components";
 
 class Button extends Component {
   state = {
@@ -23,8 +24,8 @@ class Button extends Component {
     };
 
     return (
-      <div className="drum-pad">
-        <div
+      <StyledDrumPad>
+        <StyledDrumItem
           className="drum-item"
           id={letter}
           onPointerEnter={this.onEnter}
@@ -33,10 +34,27 @@ class Button extends Component {
         >
           {letter === id && <PlayMusic id={id} />}
           {letter}
-        </div>
-      </div>
+        </StyledDrumItem>
+      </StyledDrumPad>
     );
   }
 }
 
+const StyledDrumPad = styled.div`
+justify-content: center;
+  align-items: center;
+  display: flex;
+`
+const StyledDrumItem = styled.div`
+border: 1px solid blueviolet;
+
+  border-radius: 25px;
+  height: 75%;
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.5em;
+  box-shadow: 2px 2px;
+`
 export default Button;
